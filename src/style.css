@@ -1,0 +1,176 @@
+.container.master {
+  margin-top: 100px;
+  width: 700px;
+  height: 700px;
+  max-width: none;
+  padding: 0;
+}
+
+.card.bg-dark.text-white {
+  border: none;
+}
+
+.card-img-overlay {
+  width: fit-content;
+  margin-top: 10px;
+  border-radius: 50%;
+  border: none;
+}
+.container.weather {
+  max-width: none;
+  width: 600px;
+  margin-top: 120px;
+  margin-left: 40px;
+  box-shadow: 0px 10px 20px rgba(18, 18, 18, 0.2);
+  transform: perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg)
+    scale(0.9, 0.9);
+  box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-in-out transform;
+  text-overflow: clip;
+}
+
+.container.weather:hover {
+  transform: translate3d(0px, 0px, -250px);
+}
+
+.col-2.current-weather-icon {
+  position: relative;
+  left: 50px;
+  width: 75px;
+  text-align: right;
+  font-size: 70px;
+  color: #2b3840;
+}
+.col-4.current-data {
+  width: 200px;
+  position: relative;
+  left: 50px;
+  top: 10px;
+  color: #2b3840;
+  text-align: center;
+}
+
+#cityTemp {
+  font-size: 30px;
+  text-align: right;
+}
+
+.col-7.current-temparature {
+  font-size: 15px;
+  text-align: left;
+  position: relative;
+  top: 6px;
+}
+.degrees {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "DM Mono", monospace;
+  color: #2b3840;
+  padding-bottom: 20px;
+}
+.current-precipitation,
+.current-humidity,
+.current-wind {
+  font-weight: 150;
+  font-size: 9px;
+  font-family: "DM Mono", monospace;
+  color: #2b3840;
+}
+
+.current-precipitation {
+  padding-top: 10px;
+}
+
+.col-6.current-cityData {
+  position: relative;
+  left: 60px;
+  bottom: 30px;
+  width: 300px;
+}
+
+.current-cityData {
+  max-width: 150px;
+  margin-top: 35px;
+  font-weight: 900;
+  font-size: 30px;
+  color: #2b3840;
+}
+
+.current-date {
+  font-style: italic;
+  font-size: 15px;
+  font-family: "DM Mono", monospace;
+  color: #2b3840;
+}
+
+.btn.btn-primary {
+  background-color: transparent;
+  border: none;
+}
+
+.container.overflow-hidden {
+  max-width: none;
+  width: 600px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.p-2 {
+  width: fit-content;
+  color: black;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  transition: all 2ms ease-in-out;
+}
+
+.p-2:hover {
+  transform: scale(1.1);
+  background-color: rgba(18, 18, 18, 0.2);
+}
+
+form.row {
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 70%;
+}
+
+.form-control {
+  background-color: transparent;
+  color: black;
+  border: 1px solid beige;
+  box-shadow: 0px 10px 20px rgba(18, 18, 18, 0.2);
+}
+
+.fas.fa-search {
+  color: beige;
+  box-shadow: 0px 10px 20px rgba(18, 18, 18, 0.2);
+}
+
+.fas.fa-search:hover {
+  color: #2b3840;
+}
+
+.geoLocButton {
+  color: beige;
+  border: 1px solid #2b3840;
+  background-color: #2b3840;
+  position: relative;
+  top: 4px;
+  left: 5px;
+}
+
+.geoLocButton:hover {
+  color: #2b3840;
+  background-color: beige;
+}
+
+footer {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.6;
+  padding: 10px;
+  font-family: "DM Mono", monospace;
+}
