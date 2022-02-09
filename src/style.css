@@ -174,3 +174,8 @@ footer {
   padding: 10px;
   font-family: "DM Mono", monospace;
 }
+
+.git-link {
+  text-decoration: none;
+  color: #1e78b1;
+}
