@@ -68,6 +68,15 @@
   color: #2b3840;
   padding-bottom: 20px;
 }
+
+.degrees.C {
+  color: #1e78b1;
+  pointer-events: none;
+}
+.degrees.F {
+  color: grey;
+}
+
 .current-precipitation,
 .current-humidity,
 .current-wind {
@@ -79,6 +88,10 @@
 
 .current-precipitation {
   padding-top: 10px;
+}
+
+.current-city {
+  text-transform: capitalize;
 }
 
 .col-6.current-cityData {
