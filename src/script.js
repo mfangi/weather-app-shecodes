@@ -19,9 +19,14 @@ let apiKey = "9706500ac8f554aa37ba55acbe2d7310";
 let displayedCity = document.querySelector(".current-city");
 let displayedTemp = document.querySelector("#cityTemp");
 let form = document.querySelector("form");
-let geoLocButton = document.querySelector(".geoLocButton");
-// City
+let geoLocButton = document.querySelector("#geoLocButton");
+let currentWeatherDescription = document.querySelector(
+  ".current-weather-description"
+);
+let currentHumidity = document.querySelector(".humidity-data");
+let currentWind = document.querySelector(".wind-data");
 
+// City
 function updateCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
@@ -29,14 +34,17 @@ function updateCity(event) {
   let typedCity = displayedCity.innerHTML;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${typedCity}&units=metric&appid=${apiKey}`;
   function showCityTemp(response) {
+    console.log(response);
     displayedTemp.innerHTML = Math.round(response.data.main.temp);
+    currentHumidity.innerHTML = Math.round(response.data.main.humidity);
+    currentWind.innerHTML = Math.round(response.data.wind.speed);
+    currentWeatherDescription.innerHTML = response.data.weather[0].description;
   }
   axios.get(apiUrl).then(showCityTemp);
 }
 form.addEventListener("submit", updateCity);
 
 // Geolocalization
-
 function handlePosition(position) {
   navigator.geolocation.getCurrentPosition(handlePosition);
   let lat = position.coords.latitude;
@@ -47,6 +55,7 @@ ${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(geoLoc);
 }
 function geoLoc(response) {
+  console.log("GeoLoc checker");
   displayedCity.innerHTML = response.data.name;
   displayedTemp.innerHTML = Math.round(response.data.main.temp);
 }

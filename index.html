@@ -48,11 +48,17 @@
                           <a href="" class="degrees C">°C</a>
                           |
                           <a href="" class="degrees F">°F</a>
-                          <div class="current-precipitation">
-                            Precipition: 40%
+                          <div class="current-weather-description">
+                            Clear Sky
                           </div>
-                          <div class="current-humidity">Humidity: 85%</div>
-                          <div class="current-wind">Wind: 18 km/h</div>
+                          <div class="current-humidity">
+                            Humidity:
+                            <span class="humidity-data">85</span>%
+                          </div>
+                          <div class="current-wind">
+                            Wind:
+                            <span class="wind-data">18</span> km/h
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -124,20 +130,14 @@
                 />
               </div>
               <div class="col-2">
-                <div class="row">
-                  <div class="col-6">
-                    <button type="submit" class="btn btn-primary mb-3">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-                  <div class="col-6">
-                    <button class="geoLocButton">
-                      <i class="fas fa-location-arrow"></i>
-                    </button>
-                  </div>
-                </div>
+                <button type="submit" class="btn btn-primary mb-3">
+                  <i class="fas fa-search"></i>
+                </button>
               </div>
             </form>
+            <button class="geoLocButton" id="geoLocButton">
+              <i class="fas fa-location-arrow"></i>
+            </button>
           </section>
         </div>
       </div>
