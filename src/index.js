@@ -47,7 +47,6 @@ function displayTemperature(response) {
   if (cityLenght > 5) {
     cityElement.style.fontSize = "30px";
   }
-
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -70,6 +69,8 @@ function displayFahrenheitTemperature(event) {
   fahrenheitLink.classList.add("active");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  fahrenheitLink.style.color = "black";
+  celsiusLink.style.color = "#759be0";
 }
 
 function displayCelsiusTemperature(event) {
@@ -78,6 +79,8 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  fahrenheitLink.style.color = "#759be0";
+  celsiusLink.style.color = "black";
 }
 
 function geoLoc(response) {
