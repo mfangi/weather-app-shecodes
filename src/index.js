@@ -36,7 +36,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 7) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
@@ -97,7 +97,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   let cityLenght = cityElement.innerHTML.length;
-  if (cityLenght > 5) {
+  if (cityLenght > 7) {
     cityElement.style.fontSize = "30px";
   }
   iconElement.setAttribute("alt", response.data.weather[0].description);
