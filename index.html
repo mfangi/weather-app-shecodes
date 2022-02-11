@@ -4,152 +4,125 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
+    <title>Weather App | By a.boco</title>
+    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
     <script
       src="https://kit.fontawesome.com/9eff4dd226.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=Inconsolata:wght@300&family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container master">
-      <div class="card bg-dark text-white">
-        <img src="images/window.jpg" class="card-img" alt="Circular Window" />
+      <div class="card master">
+        <img src="media/window.jpg" class="card-img" alt="..." />
         <div class="card-img-overlay">
-          <section>
-            <div class="container weather">
-              <div class="current-data-master">
-                <div class="row current-data-master">
-                  <div class="col-2 current-weather-icon">
-                    <div class="current-weather-icon">
-                      <i class="fas fa-cloud-sun"></i>
-                    </div>
-                  </div>
-                  <div class="col-4 current-data">
-                    <div class="col current-temparature">
-                      <div class="row current-temparature">
-                        <div class="col-5 current-temparature" id="cityTemp">
-                          7
-                        </div>
-                        <div class="col-7 current-temparature">
-                          <a href="" class="degrees C">°C</a>
-                          |
-                          <a href="" class="degrees F">°F</a>
-                          <div class="current-weather-description">
-                            Clear Sky
-                          </div>
-                          <div class="current-humidity">
-                            Humidity:
-                            <span class="humidity-data">85</span>%
-                          </div>
-                          <div class="current-wind">
-                            Wind:
-                            <span class="wind-data">18</span> km/h
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 current-cityData">
-                    <div class="current-city">Rome</div>
-                    <div class="current-date">Friday 20:00</div>
-                  </div>
+          <div class="weatherInfo">
+            <div class="row">
+              <div class="col-5 weather right">
+                <h1 class="city" id="city">Rome</h1>
+                <ul>
+                  <li>
+                    <span id="date">Friday 13:49</span>,
+                    <span id="description">Clear Sky</span>
+                  </li>
+                  <li>
+                    Humidity: <strong><span id="humidity">68</span>%</strong>,
+                    Wind:
+                    <strong><span id="wind">2.57</span>km/h</strong>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="col-7 weather-left d-flex justify-content-center text-center"
+              >
+                <img src="" alt="" class="weather-icon" id="icon" />
+                <span class="temperature" id="temperature">-15</span>
+                <span class="units">
+                  <a href="" id="celsius-link">°C</a> |
+                  <a href="" id="fahrenheit-link">°F</a></span
+                >
+              </div>
+            </div>
+            <div class="row btn-forecast">
+              <p>
+                <button
+                  class="btn btn-primary forecast"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseExample"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <em> Forecast for the next days...</em>
+                </button>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  Some placeholder content for the collapse component. This
+                  panel is hidden by default but revealed when the user
+                  activates the relevant trigger.
                 </div>
               </div>
             </div>
-            <div class="container overflow-hidden">
-              <div class="row gx-2 next-days">
-                <div class="col">
-                  <div class="p-2">
-                    <div class="weather-day-1">
-                      <div class="day">Sun</div>
-                      <i class="fas fa-cloud-sun"></i>
-                      <div class="temparature-day-1">10 | 14 °C</div>
+          </div>
+          <div class="searchEngine">
+            <div class="row">
+              <div class="col-11">
+                <form id="search-form">
+                  <div class="row">
+                    <div class="col-10">
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Enter a city..."
+                        aria-label="default input example"
+                        id="city-input"
+                      />
+                    </div>
+                    <div class="col-2">
+                      <button type="submit" class="btn btn-primary mb-3">
+                        <i class="fas fa-search"></i>
+                      </button>
                     </div>
                   </div>
-                </div>
-                <div class="col">
-                  <div class="p-2">
-                    <div class="weather-day-2">
-                      <div class="day">Sun</div>
-                      <i class="fas fa-cloud-sun"></i>
-                      <div class="temparature-day-2">10 | 14 °C</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="p-2">
-                    <div class="weather-day-3">
-                      <div class="day">Sun</div>
-                      <i class="fas fa-cloud-sun"></i>
-                      <div class="temparature-day-3">10 | 14 °C</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="p-2">
-                    <div class="weather-day-4">
-                      <div class="day">Sun</div>
-                      <i class="fas fa-cloud-sun"></i>
-                      <div class="temparature-day-4">10 | 14 °C</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="p-2">
-                    <div class="weather-day-5">
-                      <div class="day">Sun</div>
-                      <i class="fas fa-cloud-sun"></i>
-                      <div class="temparature-day-5">10 | 14 °C</div>
-                    </div>
-                  </div>
-                </div>
+                </form>
               </div>
-            </div>
-            <form class="row">
-              <div class="col-10">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Search other cities"
-                  aria-label="default input example"
-                  id="city-input"
-                />
-              </div>
-              <div class="col-2">
-                <button type="submit" class="btn btn-primary mb-3">
-                  <i class="fas fa-search"></i>
+              <div class="col-1">
+                <button class="geoLocButton" id="geoLocButton">
+                  <i class="fas fa-location-arrow"></i>
                 </button>
               </div>
-            </form>
-            <button class="geoLocButton" id="geoLocButton">
-              <i class="fas fa-location-arrow"></i>
-            </button>
-          </section>
+            </div>
+          </div>
         </div>
+        <footer>
+          <a
+            href="https://github.com/mfangi/weather-app-shecodes"
+            target="_blank"
+            class="git-link"
+            >Open-source code</a
+          >, by a.boco
+        </footer>
       </div>
     </div>
-    <footer>
-      <a
-        href="https://github.com/mfangi/weather-app-shecodes"
-        target="_blank"
-        class="git-link"
-        >Open-source code</a
-      >, by a.boco
-    </footer>
-    <script src="src/script.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
