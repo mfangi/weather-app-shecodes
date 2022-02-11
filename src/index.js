@@ -43,6 +43,11 @@ function displayTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let cityLenght = cityElement.innerHTML.length;
+  if (cityLenght > 5) {
+    cityElement.style.fontSize = "30px";
+  }
+
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -80,6 +85,7 @@ function geoLoc(response) {
 }
 
 function handlePosition(position) {
+  navigator.geolocation.getCurrentPosition(handlePosition);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "9706500ac8f554aa37ba55acbe2d7310";
@@ -102,6 +108,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let geoLocate = document.querySelector("#geoLocButton");
 geoLocate.addEventListener("click", handlePosition);
-navigator.geolocation.getCurrentPosition(handlePosition);
 
 search("Rome");
