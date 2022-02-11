@@ -76,13 +76,40 @@ ul {
   color: antiquewhite;
 }
 .card.card-body {
-  background-color: antiquewhite;
-  width: 600px;
+  background-color: rgba(250, 235, 215, 0.61);
+  width: 500px;
   height: 150px;
   position: relative;
-  right: 330px;
-  bottom: 10px;
+  right: 290px;
+  bottom: 5px;
   color: black;
+  border-radius: 10px;
+  font-family: "Inconsolata", monospace;
+  box-shadow: 1px 16px 43px 11px rgba(0, 0, 0, 0.2);
+}
+
+#forecast {
+  position: relative;
+  left: 40px;
+}
+
+.weather-forecast {
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 16px;
+  color: #000;
 }
 
 .searchEngine {
@@ -130,25 +157,6 @@ ul {
 .geoLocButton:hover {
   background-color: #759be0;
   color: antiquewhite;
-}
-
-.weather-forecast {
-  margin-top: 20px;
-  text-align: center;
-  color: #000;
-}
-
-.weather-forecast-date {
-  font-size: 16px;
-  opacity: 0.5;
-}
-
-.weather-forecast-temperature-min {
-  opacity: 0.5;
-}
-
-.weather-forecast-temperatures {
-  font-size: 13px;
 }
 
 footer {
