@@ -88,7 +88,6 @@ function geoLoc(response) {
 }
 
 function handlePosition(position) {
-  navigator.geolocation.getCurrentPosition(handlePosition);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "9706500ac8f554aa37ba55acbe2d7310";
@@ -96,6 +95,11 @@ function handlePosition(position) {
 &lon=
 ${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(geoLoc);
+}
+
+function locate(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
 let celsiusTemperature = null;
@@ -110,6 +114,6 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let geoLocate = document.querySelector("#geoLocButton");
-geoLocate.addEventListener("click", handlePosition);
+geoLocate.addEventListener("click", locate);
 
 search("Rome");
