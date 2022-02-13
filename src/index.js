@@ -100,6 +100,8 @@ function displayTemperature(response) {
     cityElement.style.fontSize = "30px";
   }
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  fahrenheitLink.style.color = "#759be0";
+  celsiusLink.style.color = "black";
 
   getForecast(response.data.coord);
 }
